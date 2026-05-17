@@ -12,7 +12,7 @@ ou
 Abra o arquivo:
 
 ```text
-21_1.pl
+questao_21_1.pl
 ```
 
 Execute:
@@ -36,7 +36,7 @@ Hyp = [
 Abra o arquivo:
 
 ```text
-21_2.pl
+questao_21_2.pl
 ```
 
 Execute:

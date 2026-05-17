@@ -1,6 +1,6 @@
 # Trabalho Semanal - Aprendizado Indutivo em Programação em Lógica
 
-Aluno: Marcele Azevedo de Paula Oliveira  
+Aluna: Marcele Azevedo de Paula Oliveira  
 Disciplina: Inteligência Artificial  
 Professor: Edjard Mota  
 Data: 14/05/2026  

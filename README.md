@@ -8,3 +8,7 @@ Data: 14/05/2026
 Este repositório contém a resolução dos exercícios 21.1 e 21.2 do livro:
 
 **Prolog Programming for Artificial Intelligence**, Ivan Bratko, 4ª edição, Capítulo 21.
+## Arquivos
+
+- exercicio_21_1.pl
+- exercicio_21_2.pl

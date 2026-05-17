@@ -57,10 +57,16 @@ Execute:
 Resultado obtido:
 
 ```prolog
-Hyp = [
-    [predecessor(_A,_B), parent(_A,_B)]/[_A,_B],
-    [predecessor(_C,_D), parent(_E,_D), predecessor(_C,_E)]/[_D,_C,_E]
-].
+MaxD = 0
+MaxD = 1
+MaxD = 2
+MaxD = 3
+MaxD = 4
+MaxD = 5
+MaxD = 6
+MaxD = 7
+MaxD = 8
+Hyp = [[predecessor(_A,_B), parent(_A,_B)]/[_A, _B], [predecessor(_C,_D), parent(_E,_D), predecessor(_C,_E)]/[_D, _C, _E]]
 ```
 
 A hipótese aprendida representa:

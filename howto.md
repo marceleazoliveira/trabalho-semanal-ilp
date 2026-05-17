@@ -7,12 +7,45 @@ ou
 - SWISH online
 
 
-## Exercício 21.1
+# Exercício 21.1 - has_daughter/1
 
 Abra o arquivo:
 
 ```text
-questao_21_1.pl
+questao_21_1hasdaughter.pl
+```
+
+Execute:
+
+```prolog
+?- induce(Hyp).
+```
+
+
+Hipótese encontrada:
+
+```prolog
+H = [[has_daughter(A),parent(A,B),female(B)]/[A,B]]
+```
+
+Equivalente em sintaxe Prolog:
+
+```prolog
+has_daughter(A) :-
+    parent(A,B),
+    female(B).
+```
+
+Essa hipótese representa que uma pessoa possui filha
+se ela é pai/mãe de alguém do sexo feminino.
+
+
+# Exercício 21.1 - predecessor/2
+
+Abra o arquivo:
+
+```text
+questao_21_1predecessor.pl
 ```
 
 Execute:
@@ -29,6 +62,21 @@ Hyp = [
     [predecessor(_C,_D), parent(_E,_D), predecessor(_C,_E)]/[_D,_C,_E]
 ].
 ```
+
+A hipótese aprendida representa:
+
+```prolog
+predecessor(X,Y) :-
+    parent(X,Y).
+
+predecessor(X,Y) :-
+    predecessor(X,Z),
+    parent(Z,Y).
+```
+
+Ou seja, X é predecessor de Y se:
+- X é pai/mãe direto de Y; ou
+- X é predecessor de alguém que é pai/mãe de Y.
 
 
 # Exercício 21.2

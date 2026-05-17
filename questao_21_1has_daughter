@@ -1,0 +1,79 @@
+% ============================================
+% Exercício 21.1 - has_daughter/1
+% Versão prática para SWISH
+% ============================================
+
+induce(Hyp):-
+    candidate_hyp(Hyp),
+    complete(Hyp),
+    consistent(Hyp).
+
+candidate_hyp([
+    [has_daughter(X), parent(X,Y), female(Y)]/[X,Y]
+]).
+
+complete(Hyp):-
+    \+ (
+        ex(E),
+        \+ prova(E, Hyp)
+    ).
+
+consistent(Hyp):-
+    \+ (
+        nex(E),
+        prova(E, Hyp)
+    ).
+
+prova(Goal, Hyp):-
+    member(Clause/_, Hyp),
+    copy_term(Clause, [Head|Body]),
+    Goal = Head,
+    prova_lista(Body).
+
+prova_lista([]).
+
+prova_lista([G|Gs]):-
+    prova_bg(G),
+    prova_lista(Gs).
+
+prova_bg(parent(X,Y)):- parent(X,Y).
+prova_bg(female(X)):- female(X).
+prova_bg(male(X)):- male(X).
+
+% ============================================
+% Conhecimento de fundo - Figura 21.1
+% ============================================
+
+parent(pam,bob).
+parent(tom,bob).
+parent(tom,liz).
+parent(bob,ann).
+parent(bob,pat).
+parent(pat,jim).
+parent(pat,eve).
+
+female(pam).
+female(liz).
+female(ann).
+female(pat).
+female(eve).
+
+male(tom).
+male(bob).
+male(jim).
+
+
+% ============================================
+% Exemplos positivos
+% ============================================
+
+ex(has_daughter(tom)).
+ex(has_daughter(bob)).
+ex(has_daughter(pat)).
+
+% ============================================
+% Exemplos negativos
+% ============================================
+
+nex(has_daughter(pam)).
+nex(has_daughter(jim)).
